@@ -28,7 +28,7 @@ This project explores transactional sales data from a coffee store using Microso
 ## Analytical Questions and SQL Queries
 
 ### 1. Total Sales Revenue
-Problem: Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
+__Problem:__ Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
 ```sql
 SELECT
     SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalRevenue
@@ -45,7 +45,7 @@ SUM(...): This aggregates all the converted money values to provide the total sa
 ---
 
 ### 2. Top 5 Best-Selling Coffee Products
-Problem: Identify the top 5 coffee products based on the number of units sold. This helps in understanding product popularity and inventory management.
+__Problem:__ Identify the top 5 coffee products based on the number of units sold. This helps in understanding product popularity and inventory management.
 ```sql
 SELECT TOP 5
     coffee_name,
@@ -69,7 +69,7 @@ SELECT TOP 5: Limits the output to only the top 5 rows after sorting.
 ---
 
 ### 3. Sales Trend by Time of Day
-Problem: Analyze how sales vary throughout different times of the day (Morning, Afternoon, Evening). This can inform staffing and marketing strategies.
+__Problem:__ Analyze how sales vary throughout different times of the day (Morning, Afternoon, Evening). This can inform staffing and marketing strategies.
 ```sql
 SELECT
     Time_of_Day,
@@ -99,7 +99,7 @@ ORDER BY CASE WHEN Time_of_Day = 'Morning' THEN 1 ... END: Orders the results lo
 ---
 
 ### 4. Sales Trend by Weekday
-Problem: Determine which weekdays have the highest or lowest sales. This insight is useful for planning promotions or staffing adjustments.
+__Problem:__ Determine which weekdays have the highest or lowest sales. This insight is useful for planning promotions or staffing adjustments.
 ```sql
 SELECT
     Weekday,
@@ -124,7 +124,7 @@ ORDER BY Weekdaysort: Sorts the results by the numerical representation of the w
 ---
 
 ### 5. Average Transaction Value
-Problem: Calculate the average amount of money spent per transaction. This metric can help assess customer spending habits.
+__Problem:__ Calculate the average amount of money spent per transaction. This metric can help assess customer spending habits.
 ```sql
 SELECT
     AVG(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS AverageTransactionValue
@@ -141,7 +141,7 @@ AVG(...): Calculates the average of these converted monetary values across all t
 ---
 
 ### 6. Monthly Sales Over Time
-Problem: Track total sales revenue month by month to identify seasonal trends or long-term growth.
+__Problem:__ Track total sales revenue month by month to identify seasonal trends or long-term growth.
 ```sql
 SELECT
     Month_name,
@@ -164,25 +164,25 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 ---
 
 ### Demonstrated Skills
-Data Analysis: Ability to understand a dataset's structure and content, identify key questions, and extract meaningful insights.
+* __Data Analysis:__ Ability to understand a dataset's structure and content, identify key questions, and extract meaningful insights.
 
-* SQL (Microsoft SQL Server): Proficiency in writing and executing complex SQL queries, including:
+    * __SQL (Microsoft SQL Server):__ Proficiency in writing and executing complex SQL queries, including:
 
-* Data Retrieval: Selecting specific columns and applying filtering conditions.
+    * __Data Retrieval:__ Selecting specific columns and applying filtering conditions.
 
-* Aggregate Functions: Using SUM(), COUNT(), and AVG() for data summarization.
+    * __Aggregate Functions:__ Using SUM(), COUNT(), and AVG() for data summarization.
 
-* Data Manipulation: Applying string functions like REPLACE() for data cleaning and transformation.
+    * __Data Manipulation:__ Applying string functions like REPLACE() for data cleaning and transformation.
 
-* Type Casting: Converting data types (e.g., VARCHAR to DECIMAL) for accurate calculations.
+    * __Type Casting:__ Converting data types (e.g., VARCHAR to DECIMAL) for accurate calculations.
 
-* Grouping and Ordering: Utilizing GROUP BY and ORDER BY clauses to aggregate and sort results effectively.
+    * __Grouping and Ordering:__ Utilizing GROUP BY and ORDER BY clauses to aggregate and sort results effectively.
 
-* Top N Queries: Using SELECT TOP N to retrieve the highest or lowest values.
+    * __Top N Queries:__ Using SELECT TOP N to retrieve the highest or lowest values.
 
-Data Cleaning and Transformation: Experience in preparing raw data for analysis by handling inconsistencies and converting data types.
+* __Data Cleaning and Transformation:__ Experience in preparing raw data for analysis by handling inconsistencies and converting data types.
 
-Problem Solving: Capacity to translate business questions into actionable data queries.
+* __Problem Solving:__ Capacity to translate business questions into actionable data queries.
 
 ### Dataset Credit
 Dataset by reignrichard on Kaggle
