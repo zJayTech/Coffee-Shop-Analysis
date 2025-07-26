@@ -163,16 +163,26 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 
 ---
 
-### Skills Demonstrated
-* SQL data aggregation and grouping
+### Demonstrated Skills
+Data Analysis: Ability to understand a dataset's structure and content, identify key questions, and extract meaningful insights.
 
-* Window functions (e.g., SUM() OVER)
+* SQL (Microsoft SQL Server): Proficiency in writing and executing complex SQL queries, including:
 
-* Time-based filtering and analysis
+* Data Retrieval: Selecting specific columns and applying filtering conditions.
 
-* Data-driven business decision making
+* Aggregate Functions: Using SUM(), COUNT(), and AVG() for data summarization.
 
-* Subqueries and performance metrics
+* Data Manipulation: Applying string functions like REPLACE() for data cleaning and transformation.
+
+* Type Casting: Converting data types (e.g., VARCHAR to DECIMAL) for accurate calculations.
+
+* Grouping and Ordering: Utilizing GROUP BY and ORDER BY clauses to aggregate and sort results effectively.
+
+* Top N Queries: Using SELECT TOP N to retrieve the highest or lowest values.
+
+Data Cleaning and Transformation: Experience in preparing raw data for analysis by handling inconsistencies and converting data types.
+
+Problem Solving: Capacity to translate business questions into actionable data queries.
 
 ### Dataset Credit
 Dataset by reignrichard on Kaggle
