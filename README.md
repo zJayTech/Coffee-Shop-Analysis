@@ -173,7 +173,6 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 ---
 
 ### Key Tasks & Methodology:
-
 * __Data Inspection & Understanding:__ Initial examination of the dataset to comprehend its structure, columns, and data types.
 
 * __Data Cleaning & Transformation:__ Preparation of raw data for analysis, specifically converting monetary values (e.g., 'R38.70' to DECIMAL) and handling date/time fields for proper aggregation.
@@ -185,25 +184,15 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 * __Insight Extraction:__ Interpreting query results to derive meaningful insights into sales patterns and product performance.
 
 ### Demonstrated Skills
-* __Data Analysis:__ Ability to understand a dataset's structure and content, identify key questions, and extract meaningful insights.
+* __Data Analysis:__ Ability to interpret datasets, identify analytical goals, and derive actionable conclusions.
 
-    * __SQL (Microsoft SQL Server):__ Proficiency in writing and executing complex SQL queries, including:
+* __SQL (Microsoft SQL Server):__ Advanced querying skills, including data manipulation (cleaning, casting), aggregation, filtering, and sorting to answer specific business questions.
 
-    * __Data Retrieval:__ Selecting specific columns and applying filtering conditions.
+* __Data Cleaning & Transformation:__ Practical experience in preparing messy data for analytical purposes.
 
-    * __Aggregate Functions:__ Using SUM(), COUNT(), and AVG() for data summarization.
+* __Problem Solving:__ Translating business requirements into technical solutions using database queries.
 
-    * __Data Manipulation:__ Applying string functions like REPLACE() for data cleaning and transformation.
-
-    * __Type Casting:__ Converting data types (e.g., VARCHAR to DECIMAL) for accurate calculations.
-
-    * __Grouping and Ordering:__ Utilizing GROUP BY and ORDER BY clauses to aggregate and sort results effectively.
-
-    * __Top N Queries:__ Using SELECT TOP N to retrieve the highest or lowest values.
-
-* __Data Cleaning and Transformation:__ Experience in preparing raw data for analysis by handling inconsistencies and converting data types.
-
-* __Problem Solving:__ Capacity to translate business questions into actionable data queries.
+* __Documentation:__ Clear and concise explanation of analytical approaches and SQL query logic.
 
 ### Outcome:
 This project successfully demonstrates the ability to leverage SQL for insightful data analysis, providing a clear picture of coffee sales performance, identifying popular products, and highlighting crucial sales trends over time and by daily/weekly periods.
