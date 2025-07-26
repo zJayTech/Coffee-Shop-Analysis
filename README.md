@@ -51,6 +51,8 @@ CAST(... AS DECIMAL(10, 2)): This converts the cleaned string value to a decimal
 
 SUM(...): This aggregates all the converted money values to provide the total sales revenue.
 
+__Result:__ Total Revenue: 115431.58
+
 ---
 
 ### 2. Top 5 Best-Selling Coffee Products
@@ -74,6 +76,14 @@ GROUP BY coffee_name: Groups the rows by coffee_name so that COUNT(*) calculates
 ORDER BY NumberOfSales DESC: Sorts the results in descending order based on the NumberOfSales to bring the best-selling products to the top.
 
 SELECT TOP 5: Limits the output to only the top 5 rows after sorting.
+### Result:
+|    | coffee_name           | NumberOfSales   |
+|----|-----------------------|-----------------|
+| 1  | Americano with Milk   | 824             |
+| 2  | Latte                 | 782             |
+| 3  | Americano             | 578             |
+| 4  | Cappuccino            | 501             |
+| 5  | Cortado               | 292             |
 
 ---
 
