@@ -1,4 +1,4 @@
-# Coffee Store Sales Analysis (SQL Server)
+# Coffee Store Sales Analysis
 
 ### Project Objective:
 To conduct a comprehensive analysis of coffee sales data, aiming to identify top-selling products, uncover sales patterns by time of day and weekday, and evaluate overall revenue performance.
