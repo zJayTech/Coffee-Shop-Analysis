@@ -1,6 +1,9 @@
-# Coffee Store Sales Analysis (SQL Portfolio Project)
+# Coffee Store Sales Analysis (SQL Server)
 
-This project explores transactional sales data from a coffee store using Microsoft SQL Server. The dataset includes timestamps, products, payment methods, and revenue information across thousands of transactions.
+### Project Objective:
+To perform a comprehensive data analysis of coffee sales records to identify top-selling products, understand sales trends by time of day and weekday, and evaluate overall revenue performance.
+
+This project focuses on analyzing a coffee sales dataset to extract actionable business insights using Microsoft SQL Server. The primary objective was to demonstrate proficiency in SQL for data cleaning, transformation, and querying, ultimately uncovering key trends and performance metrics.
 
 **Dataset Source**: [Coffee Store Sales – Kaggle](https://www.kaggle.com/datasets/reignrichard/coffee-store-sales?resource=download)
 
@@ -163,6 +166,18 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 
 ---
 
+### Key Tasks & Methodology:
+
+* __Data Inspection & Understanding:__ Initial examination of the dataset to comprehend its structure, columns, and data types.
+
+* __Data Cleaning & Transformation:__ Preparation of raw data for analysis, specifically converting monetary values (e.g., 'R38.70' to DECIMAL) and handling date/time fields for proper aggregation.
+
+* __Problem Formulation:__ Identifying relevant business questions that could be answered through SQL queries, such as "What is the total revenue?", "Which are the best-selling coffee products?", and "How do sales vary by weekday or time of day?".
+
+* __SQL Query Development:__ Crafting efficient and effective SQL queries for Microsoft SQL Server to address each business question. Queries involved the use of aggregate functions (SUM, COUNT, AVG), string manipulation (REPLACE), type casting (CAST), grouping (GROUP BY), and ordering (ORDER BY).
+
+* __Insight Extraction:__ Interpreting query results to derive meaningful insights into sales patterns and product performance.
+
 ### Demonstrated Skills
 * __Data Analysis:__ Ability to understand a dataset's structure and content, identify key questions, and extract meaningful insights.
 
@@ -183,6 +198,9 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 * __Data Cleaning and Transformation:__ Experience in preparing raw data for analysis by handling inconsistencies and converting data types.
 
 * __Problem Solving:__ Capacity to translate business questions into actionable data queries.
+
+### Outcome:
+This project successfully demonstrates the ability to leverage SQL for insightful data analysis, providing a clear picture of coffee sales performance, identifying popular products, and highlighting crucial sales trends over time and by daily/weekly periods.
 
 ### Dataset Credit
 Dataset by reignrichard on Kaggle
