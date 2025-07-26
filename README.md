@@ -28,7 +28,7 @@ This project explores transactional sales data from a coffee store using Microso
 ## Analytical Questions and SQL Queries
 
 ### 1. Total Sales Revenue
-**Problem:** Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
+__Problem:__ Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
 ```sql
 SELECT
     SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalRevenue
