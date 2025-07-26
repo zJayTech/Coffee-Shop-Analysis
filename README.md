@@ -5,7 +5,11 @@ To perform a comprehensive data analysis of coffee sales records to identify top
 
 This project focuses on analyzing a coffee sales dataset to extract actionable business insights using Microsoft SQL Server. The primary objective was to demonstrate proficiency in SQL for data cleaning, transformation, and querying, ultimately uncovering key trends and performance metrics.
 
-**Dataset Source**: [Coffee Store Sales – Kaggle](https://www.kaggle.com/datasets/reignrichard/coffee-store-sales?resource=download)
+### Dataset:
+**Source**: [Coffee Store Sales – Kaggle](https://www.kaggle.com/datasets/reignrichard/coffee-store-sales?resource=download)
+**The dataset was saved as a .csv file and named "coffee_sales" before being imported into Microsoft SQL Server*
+
+The dataset contains detailed transaction records including sales date, time, payment type, product name, and sales amount.
 
 ---
 
