@@ -27,122 +27,139 @@ This project explores transactional sales data from a coffee store using Microso
 
 ## Analytical Questions and SQL Queries
 
-### 1. What are the top 3 best-selling products by quantity sold?
+### 1. Total Sales Revenue
+Problem: Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
 ```sql
-SELECT TOP 3 product_name, COUNT(*) AS total_sold
-FROM coffee_sales
-GROUP BY product_name
-ORDER BY total_sold DESC;
+SELECT
+    SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalRevenue
+FROM
+    coffee_sales;
 ```
 ### Explanation:
-I group by product_name and count how many times each item was sold, ordering by volume. Limiting to the top 3 highlights the most popular products.
+REPLACE(money, 'R', ''): This function removes the 'R' prefix from the money column, converting 'R38.70' to '38.70'.
+
+CAST(... AS DECIMAL(10, 2)): This converts the cleaned string value to a decimal number with 10 total digits and 2 decimal places, suitable for accurate monetary calculations.
+
+SUM(...): This aggregates all the converted money values to provide the total sales revenue.
 
 ---
 
-### 2. What is the peak hour for sales?
+### 2. Top 5 Best-Selling Coffee Products
+Problem: Identify the top 5 coffee products based on the number of units sold. This helps in understanding product popularity and inventory management.
 ```sql
-SELECT DATEPART(HOUR, time) AS sale_hour, COUNT(*) AS total_orders
-FROM coffee_sales
-GROUP BY DATEPART(HOUR, time)
-ORDER BY total_orders DESC;
+SELECT TOP 5
+    coffee_name,
+    COUNT(*) AS NumberOfSales
+FROM
+    coffee_sales
+GROUP BY
+    coffee_name
+ORDER BY
+    NumberOfSales DESC;
 ```
 ### Explanation:
-This query extracts the hour from each sale and counts the number of orders per hour. It helps identify when the store is busiest so staff or inventory can be adjusted accordingly.
+COUNT(*): Counts the occurrences of each coffee_name to determine sales volume.
+
+GROUP BY coffee_name: Groups the rows by coffee_name so that COUNT(*) calculates the sales for each unique coffee product.
+
+ORDER BY NumberOfSales DESC: Sorts the results in descending order based on the NumberOfSales to bring the best-selling products to the top.
+
+SELECT TOP 5: Limits the output to only the top 5 rows after sorting.
 
 ---
 
-### 3. Which product generated the highest total revenue?
+### 3. Sales Trend by Time of Day
+Problem: Analyze how sales vary throughout different times of the day (Morning, Afternoon, Evening). This can inform staffing and marketing strategies.
 ```sql
-SELECT product_name, SUM(amount) AS total_revenue
-FROM coffee_sales
-GROUP BY product_name
-ORDER BY total_revenue DESC;
+SELECT
+    Time_of_Day,
+    COUNT(*) AS NumberOfSales,
+    SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalRevenue
+FROM
+    coffee_sales
+GROUP BY
+    Time_of_Day
+ORDER BY
+    CASE
+        WHEN Time_of_Day = 'Morning' THEN 1
+        WHEN Time_of_Day = 'Afternoon' THEN 2
+        WHEN Time_of_Day = 'Evening' THEN 3
+        ELSE 4
+    END;
 ```
 ### Explanation:
-This query sums the amount for each product, revealing which item brings in the most money overall—not just popularity by volume.
+COUNT(*): Calculates the number of sales for each Time_of_Day.
+
+SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total revenue for each Time_of_Day.
+
+GROUP BY Time_of_Day: Groups the results by Time_of_Day to aggregate sales and revenue for each period.
+
+ORDER BY CASE WHEN Time_of_Day = 'Morning' THEN 1 ... END: Orders the results logically by Time_of_Day (Morning, Afternoon, Evening) rather than alphabetically.
 
 ---
 
-### 4. How does daily revenue trend over time?
+### 4. Sales Trend by Weekday
+Problem: Determine which weekdays have the highest or lowest sales. This insight is useful for planning promotions or staffing adjustments.
 ```sql
-SELECT date, SUM(amount) AS daily_revenue
-FROM coffee_sales
-GROUP BY date
-ORDER BY date;
+SELECT
+    Weekday,
+    COUNT(*) AS NumberOfSales,
+    SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalRevenue
+FROM
+    coffee_sales
+GROUP BY
+    Weekday, Weekdaysort
+ORDER BY
+    Weekdaysort;
 ```
 ### Explanation:
-Grouping by date and summing revenue lets us track how daily sales fluctuate. This could be visualized in a time series chart for trends and seasonality.
+COUNT(*): Counts the total sales for each Weekday.
+
+SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total revenue for each Weekday.
+
+GROUP BY Weekday, Weekdaysort: Groups the data by Weekday and Weekdaysort to ensure correct aggregation.
+
+ORDER BY Weekdaysort: Sorts the results by the numerical representation of the weekday (e.g., Monday=1, Tuesday=2), ensuring the days are ordered correctly.
 
 ---
 
-### 5. What is the distribution of payment methods?
+### 5. Average Transaction Value
+Problem: Calculate the average amount of money spent per transaction. This metric can help assess customer spending habits.
 ```sql
-SELECT payment_type, COUNT(*) AS count, 
-       ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS percentage
-FROM coffee_sales
-GROUP BY payment_type;
+SELECT
+    AVG(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS AverageTransactionValue
+FROM
+    coffee_sales;
 ```
 ### Explanation:
-This query shows how often each payment method was used, along with the percentage share. This insight is useful for tailoring checkout systems and customer preferences.
+REPLACE(money, 'R', ''): Removes the 'R' prefix from the money column.
+
+CAST(... AS DECIMAL(10, 2)): Converts the cleaned string to a decimal number.
+
+AVG(...): Calculates the average of these converted monetary values across all transactions.
 
 ---
 
-### 6. What is the average number of items per order?
+### 6. Monthly Sales Over Time
+Problem: Track total sales revenue month by month to identify seasonal trends or long-term growth.
 ```sql
-SELECT ROUND(COUNT(*) * 1.0 / COUNT(DISTINCT transaction_id), 2) AS avg_items_per_order
-FROM coffee_sales;
+SELECT
+    Month_name,
+    Monthsort,
+    SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))) AS TotalMonthlyRevenue
+FROM
+    coffee_sales
+GROUP BY
+    Month_name, Monthsort
+ORDER BY
+    Monthsort;
 ```
 ### Explanation:
-I divide the total number of product entries by the number of unique transactions to get the average basket size. It helps evaluate upselling success.
+SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total revenue for each month.
 
----
+GROUP BY Month_name, Monthsort: Groups the data by Month_name and Monthsort to aggregate sales for each month.
 
-### 7. Which day had the highest revenue?
-```sql
-SELECT TOP 1 date, SUM(amount) AS total_revenue
-FROM coffee_sales
-GROUP BY date
-ORDER BY total_revenue DESC;
-```
-### Explanation:
-This query identifies the single highest-grossing day, which can help explain spikes (e.g., special promotions or holidays).
-
----
-
-### 8. What’s the average revenue per transaction?
-```sql
-SELECT ROUND(SUM(amount) * 1.0 / COUNT(DISTINCT transaction_id), 2) AS avg_revenue_per_transaction
-FROM coffee_sales;
-```
-### Explanation:
-This gives the average total spend per transaction, a key business metric for evaluating customer value.
-
----
-
-### 9. What is the average revenue per hour?
-```sql
-SELECT DATEPART(HOUR, time) AS hour,
-       ROUND(AVG(amount), 2) AS avg_revenue
-FROM coffee_sales
-GROUP BY DATEPART(HOUR, time)
-ORDER BY hour;
-```
-### Explanation:
-This shows how revenue varies by hour, helping identify high and low earning time slots for staffing and promotions.
-
----
-
-### 10. What is the daily revenue and cumulative revenue over time?
-```sql
-SELECT date,
-       SUM(amount) AS daily_revenue,
-       SUM(SUM(amount)) OVER (ORDER BY date) AS cumulative_revenue
-FROM coffee_sales
-GROUP BY date
-ORDER BY date;
-```
-### Explanation:
-Using a window function here, I calculate both daily and cumulative revenue in a single query. This provides insight into overall performance growth across time.
+ORDER BY Monthsort: Sorts the results by the numerical representation of the month to ensure chronological order.
 
 ---
 
