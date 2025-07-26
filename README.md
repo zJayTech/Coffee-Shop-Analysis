@@ -8,7 +8,7 @@ Using Microsoft SQL Server, this project highlights the use of SQL for data clea
 ### Dataset:
 **Source**: [Coffee Store Sales – Kaggle](https://www.kaggle.com/datasets/reignrichard/coffee-store-sales?resource=download)
 
-*The dataset was saved as a .csv file and named "coffee_sales" before being imported into Microsoft SQL Server*
+> *The dataset was saved as a .csv file and named "coffee_sales" before being imported into Microsoft SQL Server*
 
 The dataset contains detailed transaction records including sales date, time, payment type, product name, and sales amount.
 
