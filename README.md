@@ -33,7 +33,8 @@ The dataset contains detailed transaction records including sales date, time, pa
 
 ---
 
-## Analytical Problems and SQL Queries
+## SQL Queries for Coffee Sales Data Analysis
+This section outlines several SQL queries designed to extract valuable insights from the coffee_sales dataset. These queries cover various aspects of sales performance, product popularity, and temporal trends.
 
 ### 1. Total Sales Revenue
 __Problem:__ Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
