@@ -44,12 +44,14 @@ SELECT
 FROM
     coffee_sales;
 ```
+
 ### Explanation:
 REPLACE(money, 'R', ''): This function removes the 'R' prefix from the money column, converting 'R38.70' to '38.70'.
 
 CAST(... AS DECIMAL(10, 2)): This converts the cleaned string value to a decimal number with 10 total digits and 2 decimal places, suitable for accurate monetary calculations.
 
 SUM(...): This aggregates all the converted money values to provide the total sales revenue.
+
 
 ### Result:
 |    | TotalRevenue |
@@ -71,6 +73,7 @@ GROUP BY
 ORDER BY
     NumberOfSales DESC;
 ```
+
 ### Explanation:
 COUNT(*): Counts the occurrences of each coffee_name to determine sales volume.
 
@@ -79,6 +82,8 @@ GROUP BY coffee_name: Groups the rows by coffee_name so that COUNT(*) calculates
 ORDER BY NumberOfSales DESC: Sorts the results in descending order based on the NumberOfSales to bring the best-selling products to the top.
 
 SELECT TOP 5: Limits the output to only the top 5 rows after sorting.
+
+
 ### Result:
 |    | coffee_name           | NumberOfSales   |
 |----|-----------------------|-----------------|
@@ -109,6 +114,7 @@ ORDER BY
         ELSE 4
     END;
 ```
+
 ### Explanation:
 COUNT(*): Calculates the number of sales for each Time_of_Day.
 
@@ -117,6 +123,7 @@ SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total reven
 GROUP BY Time_of_Day: Groups the results by Time_of_Day to aggregate sales and revenue for each period.
 
 ORDER BY CASE WHEN Time_of_Day = 'Morning' THEN 1 ... END: Orders the results logically by Time_of_Day (Morning, Afternoon, Evening) rather than alphabetically.
+
 
 ### Result:
 |    | Time_of_Day   | NumberOfSales   | TotalRevenue   |
@@ -141,6 +148,7 @@ GROUP BY
 ORDER BY
     Weekdaysort;
 ```
+
 ### Explanation:
 COUNT(*): Counts the total sales for each Weekday.
 
@@ -149,6 +157,7 @@ SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total reven
 GROUP BY Weekday, Weekdaysort: Groups the data by Weekday and Weekdaysort to ensure correct aggregation.
 
 ORDER BY Weekdaysort: Sorts the results by the numerical representation of the weekday (e.g., Monday=1, Tuesday=2), ensuring the days are ordered correctly.
+
 
 ### Result:
 |    | Weekday  | NumberOfSales  | TotalRevenue  |
@@ -171,12 +180,14 @@ SELECT
 FROM
     coffee_sales;
 ```
+
 ### Explanation:
 REPLACE(money, 'R', ''): Removes the 'R' prefix from the money column.
 
 CAST(... AS DECIMAL(10, 2)): Converts the cleaned string to a decimal number.
 
 AVG(...): Calculates the average of these converted monetary values across all transactions.
+
 
 ### Result:
 |    | AverageTransactionValue  |
@@ -199,12 +210,14 @@ GROUP BY
 ORDER BY
     Monthsort;
 ```
+
 ### Explanation:
 SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total revenue for each month.
 
 GROUP BY Month_name, Monthsort: Groups the data by Month_name and Monthsort to aggregate sales for each month.
 
 ORDER BY Monthsort: Sorts the results by the numerical representation of the month to ensure chronological order.
+
 
 ### Result:
 |    | Month_name  | Monthsort   | TotalMonthlyRevenue  |
