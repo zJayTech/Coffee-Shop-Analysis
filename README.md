@@ -1,9 +1,9 @@
 # Coffee Store Sales Analysis (SQL Server)
 
 ### Project Objective:
-To perform a comprehensive data analysis of coffee sales records to identify top-selling products, understand sales trends by time of day and weekday, and evaluate overall revenue performance.
+To conduct a comprehensive analysis of coffee sales data, aiming to identify top-selling products, uncover sales patterns by time of day and weekday, and evaluate overall revenue performance.
 
-This project focuses on analyzing a coffee sales dataset to extract actionable business insights using Microsoft SQL Server. The primary objective was to demonstrate proficiency in SQL for data cleaning, transformation, and querying, ultimately uncovering key trends and performance metrics.
+Using Microsoft SQL Server, this project highlights the use of SQL for data cleaning, transformation, and advanced querying to extract meaningful business insights and reveal key performance trends.
 
 ### Dataset:
 **Source**: [Coffee Store Sales – Kaggle](https://www.kaggle.com/datasets/reignrichard/coffee-store-sales?resource=download)
@@ -34,7 +34,7 @@ The dataset contains detailed transaction records including sales date, time, pa
 ---
 
 ## SQL Queries for Coffee Sales Data Analysis
-This section outlines several SQL queries designed to extract valuable insights from the coffee_sales dataset. These queries cover various aspects of sales performance, product popularity, and temporal trends.
+This section outlines several SQL queries designed to extract valuable insights from the coffee_sales dataset.
 
 ### 1. Total Sales Revenue
 __Problem:__ Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
