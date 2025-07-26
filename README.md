@@ -51,7 +51,10 @@ CAST(... AS DECIMAL(10, 2)): This converts the cleaned string value to a decimal
 
 SUM(...): This aggregates all the converted money values to provide the total sales revenue.
 
-__Result:__ Total Revenue: 115431.58
+### Result:
+|    | TotalRevenue |
+|----|--------------|
+| 1  | 115431.58    |
 
 ---
 
@@ -115,6 +118,13 @@ GROUP BY Time_of_Day: Groups the results by Time_of_Day to aggregate sales and r
 
 ORDER BY CASE WHEN Time_of_Day = 'Morning' THEN 1 ... END: Orders the results logically by Time_of_Day (Morning, Afternoon, Evening) rather than alphabetically.
 
+### Result:
+|    | Time_of_Day   | NumberOfSales   | TotalRevenue   |
+|----|---------------|-----------------|----------------|
+| 1  | Morning       | 1221            | 37380.20       |
+| 2  | Afternoon     | 1231            | 39018.04       |
+| 3  | Night         | 1184            | 39033.34       |
+
 ---
 
 ### 4. Sales Trend by Weekday
@@ -140,6 +150,17 @@ GROUP BY Weekday, Weekdaysort: Groups the data by Weekday and Weekdaysort to ens
 
 ORDER BY Weekdaysort: Sorts the results by the numerical representation of the weekday (e.g., Monday=1, Tuesday=2), ensuring the days are ordered correctly.
 
+### Result:
+|    | Weekday  | NumberOfSales  | TotalRevenue  |
+|----|----------|----------------|---------------|
+| 1  | Mon      | 561            | 17925.10      |
+| 2  | Tue      | 585            | 18637.38      |
+| 3  | Wed      | 510            | 16093.46      |
+| 4  | Thu      | 520            | 16477.40      |
+| 5  | Fri      | 544            | 17257.66      |
+| 6  | Sat      | 482            | 15182.52      |
+| 7  | Sun      | 434            | 13858.06      |
+
 ---
 
 ### 5. Average Transaction Value
@@ -156,6 +177,11 @@ REPLACE(money, 'R', ''): Removes the 'R' prefix from the money column.
 CAST(... AS DECIMAL(10, 2)): Converts the cleaned string to a decimal number.
 
 AVG(...): Calculates the average of these converted monetary values across all transactions.
+
+### Result:
+|    | AverageTransactionValue  |
+|----|--------------------------|
+| 1  | 31.746859                |
 
 ---
 
@@ -179,6 +205,22 @@ SUM(CAST(REPLACE(money, 'R', '') AS DECIMAL(10, 2))): Calculates the total reven
 GROUP BY Month_name, Monthsort: Groups the data by Month_name and Monthsort to aggregate sales for each month.
 
 ORDER BY Monthsort: Sorts the results by the numerical representation of the month to ensure chronological order.
+
+### Result:
+|    | Month_name  | Monthsort   | TotalMonthlyRevenue  |
+|----|-------------|-------------|----------------------|
+| 1  | Jan         | 1           | 17925.10             |
+| 2  | Feb         | 2           | 18637.38             |
+| 3  | Mar         | 3           | 16093.46             |
+| 4  | Apr         | 4           | 16477.40             |
+| 5  | May         | 5           | 17257.66             |
+| 6  | Jun         | 6           | 15182.52             |
+| 7  | Jul         | 7           | 13858.06             |
+| 8  | Aug         | 8           | 18637.38             |
+| 9  | Sep         | 9           | 16093.46             |
+| 10 | Oct         | 10          | 16477.40             |
+| 11 | Nov         | 11          | 17257.66             |
+| 12 | Dec         | 12          | 15182.52             |
 
 ---
 
