@@ -33,7 +33,7 @@ The dataset contains detailed transaction records including sales date, time, pa
 
 ---
 
-## Analytical Questions and SQL Queries
+## Analytical Problems and SQL Queries
 
 ### 1. Total Sales Revenue
 __Problem:__ Calculate the total revenue generated from all coffee sales. This query helps understand the overall financial performance.
