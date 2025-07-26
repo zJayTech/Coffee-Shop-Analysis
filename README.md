@@ -33,6 +33,7 @@ SELECT TOP 3 product_name, COUNT(*) AS total_sold
 FROM coffee_sales
 GROUP BY product_name
 ORDER BY total_sold DESC;
+```
 # Example in Context:
 I group by product_name and count how many times each item was sold, ordering by volume. Limiting to the top 3 highlights the most popular products.
 
@@ -44,6 +45,7 @@ SELECT DATEPART(HOUR, time) AS sale_hour, COUNT(*) AS total_orders
 FROM coffee_sales
 GROUP BY DATEPART(HOUR, time)
 ORDER BY total_orders DESC;
+```
 # Example in Context:
 This query extracts the hour from each sale and counts the number of orders per hour. It helps identify when the store is busiest so staff or inventory can be adjusted accordingly.
 
@@ -55,6 +57,7 @@ SELECT product_name, SUM(amount) AS total_revenue
 FROM coffee_sales
 GROUP BY product_name
 ORDER BY total_revenue DESC;
+```
 # Example in Context:
 This query sums the amount for each product, revealing which item brings in the most money overall—not just popularity by volume.
 
@@ -66,6 +69,7 @@ SELECT date, SUM(amount) AS daily_revenue
 FROM coffee_sales
 GROUP BY date
 ORDER BY date;
+```
 # Example in Context:
 Grouping by date and summing revenue lets us track how daily sales fluctuate. This could be visualized in a time series chart for trends and seasonality.
 
