@@ -54,9 +54,9 @@ SUM(...): This aggregates all the converted money values to provide the total sa
 
 
 ### Result:
-|    | TotalRevenue |
-|----|--------------|
-| 1  | 115431.58    |
+| TotalRevenue |
+|--------------|
+| 115431.58    |
 
 ---
 
@@ -85,13 +85,13 @@ SELECT TOP 5: Limits the output to only the top 5 rows after sorting.
 
 
 ### Result:
-|    | coffee_name           | NumberOfSales   |
-|----|-----------------------|-----------------|
-| 1  | Americano with Milk   | 824             |
-| 2  | Latte                 | 782             |
-| 3  | Americano             | 578             |
-| 4  | Cappuccino            | 501             |
-| 5  | Cortado               | 292             |
+| coffee_name           | NumberOfSales   |
+|-----------------------|-----------------|
+| Americano with Milk   | 824             |
+| Latte                 | 782             |
+| Americano             | 578             |
+| Cappuccino            | 501             |
+| Cortado               | 292             |
 
 ---
 
@@ -126,11 +126,11 @@ ORDER BY CASE WHEN Time_of_Day = 'Morning' THEN 1 ... END: Orders the results lo
 
 
 ### Result:
-|    | Time_of_Day   | NumberOfSales   | TotalRevenue   |
-|----|---------------|-----------------|----------------|
-| 1  | Morning       | 1221            | 37380.20       |
-| 2  | Afternoon     | 1231            | 39018.04       |
-| 3  | Night         | 1184            | 39033.34       |
+| Time_of_Day   | NumberOfSales   | TotalRevenue   |
+|---------------|-----------------|----------------|
+| Morning       | 1221            | 37380.20       |
+| Afternoon     | 1231            | 39018.04       |
+| Night         | 1184            | 39033.34       |
 
 ---
 
@@ -160,15 +160,15 @@ ORDER BY Weekdaysort: Sorts the results by the numerical representation of the w
 
 
 ### Result:
-|    | Weekday  | NumberOfSales  | TotalRevenue  |
-|----|----------|----------------|---------------|
-| 1  | Mon      | 561            | 17925.10      |
-| 2  | Tue      | 585            | 18637.38      |
-| 3  | Wed      | 510            | 16093.46      |
-| 4  | Thu      | 520            | 16477.40      |
-| 5  | Fri      | 544            | 17257.66      |
-| 6  | Sat      | 482            | 15182.52      |
-| 7  | Sun      | 434            | 13858.06      |
+| Weekday  | NumberOfSales  | TotalRevenue  |
+|----------|----------------|---------------|
+| Mon      | 561            | 17925.10      |
+| Tue      | 585            | 18637.38      |
+| Wed      | 510            | 16093.46      |
+| Thu      | 520            | 16477.40      |
+| Fri      | 544            | 17257.66      |
+| Sat      | 482            | 15182.52      |
+| Sun      | 434            | 13858.06      |
 
 ---
 
@@ -190,9 +190,9 @@ AVG(...): Calculates the average of these converted monetary values across all t
 
 
 ### Result:
-|    | AverageTransactionValue  |
-|----|--------------------------|
-| 1  | 31.746859                |
+| AverageTransactionValue  |
+|--------------------------|
+| 31.746859                |
 
 ---
 
@@ -220,20 +220,20 @@ ORDER BY Monthsort: Sorts the results by the numerical representation of the mon
 
 
 ### Result:
-|    | Month_name  | Monthsort   | TotalMonthlyRevenue  |
-|----|-------------|-------------|----------------------|
-| 1  | Jan         | 1           | 6398.86              |
-| 2  | Feb         | 2           | 13215.48             |
-| 3  | Mar         | 3           | 17036.64             |
-| 4  | Apr         | 4           | 6720.56              |
-| 5  | May         | 5           | 9063.42              |
-| 6  | Jun         | 6           | 7758.76              |
-| 7  | Jul         | 7           | 6915.94              |
-| 8  | Aug         | 8           | 7613.84              |
-| 9  | Sep         | 9           | 9988.64              |
-| 10 | Oct         | 10          | 13891.16             |
-| 11 | Nov         | 11          | 8590.54              |
-| 12 | Dec         | 12          | 8237.74              |
+| Month_name  | Monthsort   | TotalMonthlyRevenue  |
+|-------------|-------------|----------------------|
+| Jan         | 1           | 6398.86              |
+| Feb         | 2           | 13215.48             |
+| Mar         | 3           | 17036.64             |
+| Apr         | 4           | 6720.56              |
+| May         | 5           | 9063.42              |
+| Jun         | 6           | 7758.76              |
+| Jul         | 7           | 6915.94              |
+| Aug         | 8           | 7613.84              |
+| Sep         | 9           | 9988.64              |
+| Oct         | 10          | 13891.16             |
+| Nov         | 11          | 8590.54              |
+| Dec         | 12          | 8237.74              |
 
 ---
 
