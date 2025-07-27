@@ -265,3 +265,14 @@ This project successfully demonstrates the ability to leverage SQL for insightfu
 ### Dataset Credit
 Dataset by reignrichard on Kaggle
 Format: CSV | Contains: product names, transaction IDs, payment types, timestamps, and revenue
+
+---
+
+## Contact
+
+Feel free to reach out if you have any questions or feedback!
+
+### Zack Jones
+* **Email:** zackjones.dataanalyst@gmail.com
+* **LinkedIn:** www.linkedin.com/in/zjaytech/
+
